@@ -39,7 +39,6 @@ jobs:
     - name: build
       run: |
         source emsdk/emsdk_env.sh
-        make library
         make
       
     - name: Run install
