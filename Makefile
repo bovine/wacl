@@ -51,7 +51,7 @@ extensions: waclinstall
 library:
 	mkdir -p library
 	cp -r $(INSTALLDIR)/lib/tcl8* library/
-	cd ext && if [ ! -e tcllib* ] ; then make tcllibprep ; fi && make tcllib
+	cd ext && if [ ! -e tcllib*/Makefile.in ] ; then make tcllibprep ; fi && make tcllib
 	
 preGeneratedJs: library
 	python $(EMSCRIPTEN)/tools/file_packager.py wacl-library.data --preload library@/usr/lib/ | tail -n +5 > library.js
