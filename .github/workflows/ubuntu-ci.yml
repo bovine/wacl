@@ -30,6 +30,11 @@ jobs:
         ./emsdk activate latest
         source ./emsdk_env.sh
 
+    - name: prep
+      run: |
+        source emsdk/emsdk_env.sh
+        make waclprep
+
     - name: build
       run: |
         source emsdk/emsdk_env.sh
